@@ -1,0 +1,23 @@
+@startuml Arsitektur Sistem
+
+node "GraphQL SI"{
+    [Frontend SI GraphQL] <--> [Backend SI GraphQL]
+}
+
+node "REST SI"{
+    [Frontend SI REST] <--> [Backend SI REST]
+}
+
+cloud {
+    [database]
+    
+}
+
+[Backend Scraping Linkedin]
+
+[Frontend SI GraphQL] --> [Backend Scraping Linkedin]
+[Frontend SI REST] --> [Backend Scraping Linkedin]
+[Backend SI GraphQL] <--> [database]
+[Backend SI REST] <--> [database]
+[Backend Scraping Linkedin] --> [database]
+@enduml

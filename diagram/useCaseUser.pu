@@ -1,0 +1,25 @@
+@startuml use Case
+
+:pengguna:
+
+(login)
+
+pengguna --> (login)
+pengguna -left-> (register)
+login ..> (logout): include
+
+rectangle alumni {
+    login ..> (lihat alumni) : include
+    login ..> (cari alumni): include
+    login ..> (lihat detail alumni): include
+}
+
+rectangle jurusan {
+    login .left.> (lihat jurusan): include
+}
+
+rectangle dashboard {
+    login .up.> (lihat data total): include
+}
+
+@enduml

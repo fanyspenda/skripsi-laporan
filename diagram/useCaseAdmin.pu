@@ -1,0 +1,36 @@
+@startuml use Case Admin
+
+:admin:
+
+admin --> (login)
+login .right..> (logout): include
+rectangle alumni {
+    login ..> (lihat list alumni) : include
+    login ..> (cari alumni): include
+    login ..> (lihat detail alumni): include
+    login ..> (tambah alumni): include
+    login ..> (scraping ulang): include
+    login ..> (edit alumni): include
+    login ..> (hapus alumni): include
+}
+
+rectangle jurusan {
+    login .up..> (lihat daftar jurusan): include
+    login .up..> (edit jurusan): include
+    login .up..> (hapus jurusan): include
+    login .up..> (tambah jurusan): include
+    
+}
+
+rectangle dashboard {
+    login .up..> (lihat data total): include
+}
+
+rectangle user {
+    login ...>(lihat list user): include
+    login ...>(edit user): include
+    login ...>(delete user): include
+    login ...>(tambah user): include
+}
+
+@enduml
